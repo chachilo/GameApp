@@ -4,6 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import InicioScreen from './InicioScreen';
 import JuegosScreen from './JuegosScreen';
 import ConfiguracionScreen from './ConfiguracionScreen';
+import GraficoScreen from './GraficoScreen';
+import VideojuegosScreen from './VideojuegosScreen'
 import { useNavigation } from '@react-navigation/native';
 
 const Stack = createStackNavigator();
@@ -28,6 +30,14 @@ const HomeScreen = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigateToScreen('Configuracion')} style={styles.navButton}>
           <Text style={styles.navButtonText}>Configuración</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigateToScreen('Grafico')} style={styles.navButton}>
+          <Text style={styles.navButtonText}>Grafico</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigateToScreen('Datos')} style={styles.navButton}>
+          <Text style={styles.navButtonText}>Datos</Text>
+        </TouchableOpacity>
       </View>
 
       {/* Stack Navigator para gestionar las pantallas */}
@@ -35,6 +45,8 @@ const HomeScreen = ({ navigation }) => {
         <Stack.Screen name="Inicio" component={InicioScreen} />
         <Stack.Screen name="Juegos" component={JuegosScreen} />
         <Stack.Screen name="Configuracion" component={ConfiguracionScreen} />
+        <Stack.Screen name="Grafico" component={GraficoScreen} />
+        <Stack.Screen name="Datos" component={VideojuegosScreen} />
       </Stack.Navigator>
     </View>
   );
